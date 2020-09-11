@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FinApp</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="./includes/style/style.css">
+  <link rel="stylesheet" href="./style/style.css">
   <script src="https://kit.fontawesome.com/5179eaaee1.js" crossorigin="anonymous"></script>
+  <link rel="styleSheet" href="./style/variables_root.css" type="text/css">
+  <link rel="styleSheet" href="./style/formsEstilos.css" type="text/css">
 </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-finapp5 m-3">
-      <a class="navbar-brand" href="#"><img src="./includes/images/logo.png" alt="Logo FinApp" style="max-height: 100px;"></a>
+      <a class="navbar-brand" href="../index.html"><img src=".//images/logo.png" alt="Logo FinApp" style="max-height: 100px;"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,11 +36,10 @@
     <nav class="navbar navbar-expand-lg bg-finapp sticky-top menu m-3">
       <div class=" navbar-collapse" id="navbarNavAltMarkup">
         <div class="container navbar-nav">
-          <a class="nav-link active" href="#">Inicio</a>
-          <a class="nav-link" href="./includes/registroRol.html">Sección 1</a>
-          <a class="nav-link" href="./includes/registroSede.html">Sección 2</a>
-          <a class="nav-link" href="./includes/administrarSede.html">Sección 3</a>
-          <a class="nav-link" href="./includes/registroGasto.html">Sección 4</a>
+          <a class="nav-link" href="#">Inicio</a>
+          <a class="nav-link" href="#">Sección 1</a>
+          <a class="nav-link" href="#">Sección 2</a>
+          <a class="nav-link" href="#">Sección 3</a>
         </div>
       </div>
     </nav>
@@ -46,47 +47,43 @@
 
   <main>
     <div class="jumbotron container bg-finapp5">
-      <h1 class="display-4" style="color: #1D3557;">Compañía</h1>
-      <br>
-      <dir class="row d-flex justify-content-around">
-        <div class="card" style="width: 11rem;">
-          <img class="card-img-top" src="https://cdn.pixabay.com/photo/2016/12/28/08/15/hummingbird-1935665_960_720.png" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Logo Compañía</p>
-          </div>
-        </div>
-        <div class="card" style="width: 11rem;">
-          <img class="card-img-top" src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638_960_720.png" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Foto Usuario</p>
-          </div>
-        </div>
-        <div class="">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item bg-finapp5">Nombres: Carlos</li>
-            <li class="list-group-item bg-finapp5">Apellidos: Romero</li>
-            <li class="list-group-item bg-finapp5">Cargo: Jefe de planta</li>
-            <li class="list-group-item bg-finapp5">Rol: Administrador</li>
-            <li class="list-group-item bg-finapp5">Organización: Compañía 1</li>
-          </ul>
-        </div>
-      </dir>
-      <hr class="my-5">
-      <div class="row d-flex justify-content-around">
-        <p class="lead">
-          <a class="btn btn-primary btn-lg bg-finapp2" href="#" role="button">Registrar Información</a>
-        </p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg bg-finapp2" href="#" role="button">Crear Informe</a>
-        </p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg bg-finapp2" href="#" role="button">Editar Perfil</a>
-        </p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg bg-finapp2" href="./index-unlog.html" role="button">Cerrar Sesión</a>
-        </p>
-
+      <div class="container border bg-finapp4">
+        <h2 class="text-center my-5">ADMINISTRAR SEDE</h2>
+  
+        <table class="table">
+          <thead class="tabla-encabezado">
+            <tr>
+              <th scope="col">Sede</th>
+              <th scope="col">Responsable</th>
+              <th scope="col">Habilitado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Sede 1</th>
+              <td>Marcela Rodríguez</td>
+              <td>SI</td>
+            </tr>
+            <tr>
+              <th scope="row">Sede 2</th>
+              <td>Alba López</td>
+              <td>SI</td>
+            </tr>
+            <tr>
+              <th scope="row">Sede 3</th>
+              <td>Hernan Sanchez</td>
+              <td>NO</td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <form action="./RegistroSede.html" class="contenedor-form mb-5">
+          <input type="submit" value="Registrar Sede"></input>
+        </form>
+        
+        
       </div>
+      
       
     </div>
   </main>

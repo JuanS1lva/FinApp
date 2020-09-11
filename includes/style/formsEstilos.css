@@ -1,8 +1,8 @@
 
-
 .contenedor-form input[type="text"],
 .contenedor-form input[type="password"],
 .contenedor-form input[type="email"],
+.contenedor-form input[type="date"],
 .contenedor-form textarea,
 .contenedor-form select {
     outline: none;
@@ -12,7 +12,7 @@
     color:black;
     border: none;
     border-radius: 2px;
-    border-bottom: 4px solid #E63946;
+    border-bottom: 4px solid var(--color-primario);
     box-sizing: border-box;
     font-size: 14px;
     font-weight:normal;
@@ -41,5 +41,10 @@
 }
 
 .contenedor-form input[type="submit"]:hover {
-    background:#A8DADC;
+    background:var(--bg-hover-submit);
+}
+
+.tabla-encabezado{
+    border-bottom: 4px solid var(--color-primario);
+    background:#F1FAEE;
 }
