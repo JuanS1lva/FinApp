@@ -48,119 +48,73 @@
   <main>
     <div class="jumbotron container bg-finapp5">
       <div class="container border bg-finapp4">
-        <h2 class="text-center my-5" style="color:#1D3557">REGISTRAR EMPRESA</h2>
+        <h2 class="text-center my-5" style="color: #1D3557;">REGISTRAR SEDE</h2>
         <form class="contenedor-form">
           <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Tipo de Usuario:</label>
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Sede:</label>
+            <div class="col-sm-4 col-md-5 col-lg-4">
+              <input type="text" class="form-control" placeholder="Agregar Sede">
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Descripción:</label>
+            <div class="col-sm-4 col-md-5 col-lg-4">
+              <textarea class="form-control" rows="4" placeholder="Agregar Descripción"></textarea>
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Responsable:</label>
             <div class="col-sm-4 col-md-5 col-lg-4">
               <select class="custom-select">
-                <option selected disabled value="">Agregar Tipo de Usuario</option>
-                <option value="0">Persona Natural</option>
-                <option value="1">Persona Jurídica</option>
+                <option selected disabled value="">- Seleccione -</option>
               </select>
             </div>
           </div>
           <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Tipo Documento Empresa:</label>
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Habilitado:</label>
             <div class="col-sm-4 col-md-5 col-lg-4">
               <select class="custom-select">
-                <option selected disabled value="">Agregar Tipo Documento</option>
-                <option value="0">Cédula de Ciudadania</option>
-                <option value="1">Cédula de Extranjería</option>
-                <option value="2">Nit</option>
+                <option selected disabled value="">- Seleccione -</option>
+                <option value="1">SI</option>
+                <option value="0">NO</option>
               </select>
             </div>
           </div>
+  
           <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Número Documento Empresa:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-                <input type="text" class="form-control" placeholder="Agregar Número de Documento">
-            </div>
+            <label for="" class="col-sm-4 col-md-4 col-lg-7 col-form-label">Asociar Categorías:</label>
           </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Tipo Documento Usuario:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <select class="custom-select">
-                <option selected disabled value="">Agregar Tipo de Documento</option>
-                <option value="0">Cédula de Ciudadania</option>
-                <option value="1">Cédula de Extranjería</option>
-                <option value="2">Nit</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Número Documento Usuario:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <input type="text" class="form-control" placeholder="Agregar Número de Documento">
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Nombres:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <input type="text" class="form-control" placeholder="Agregar Nombres">
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Apellidos:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <input type="text" class="form-control" placeholder="Agregar Apellidos">
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Dirección:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <input type="text" class="form-control" placeholder="Agregar Dirección">
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Departamento:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <select class="custom-select">
-                <option selected disabled value="">Agregar Departamento</option>
-                <option value="0">Bogotá D.C</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Ciudad:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <select class="custom-select">
-                <option selected disabled value="">Agregar Ciudad</option>
-                <option value="0">Bogotá D.C</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Correo:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <input type="email" class="form-control" placeholder="Agregar Correo">
-            </div>
-          </div>
-          <hr class="my-4">
-          <!-- Seccion credenciales -->
-            <div class="form-group row justify-content-center">
-              <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Usuario:</label>
-              <div class="col-sm-4 col-md-5 col-lg-4">
-                <input type="text" class="form-control" placeholder="Agregar Usuario">
+  
+          <div class="form-group row justify-content-center mb-5">
+            <div class="col-sm-12 col-md-12 col-lg-7">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="selAll" name="categorias" value="Todas">
+                <label class="form-check-label" for="selAll">Todas</label>
               </div>
             </div>
-            <div class="form-group row justify-content-center">
-              <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Contraseña:</label>
-              <div class="col-sm-4 col-md-5 col-lg-4">
-                <input type="password" class="form-control" placeholder="Agregar Contraseña">
+            <div class="col-sm-12 col-md-12 col-lg-7 d-flex justify-content-between">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Categoria1" name="categorias" value="0">
+                <label class="form-check-label" for="Categoria1">Categoría 1</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Categoria2" name="categorias" value="1">
+                <label class="form-check-label" for="Categoria2">Categoría 2</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Categoria3" name="categorias" value="2">
+                <label class="form-check-label" for="Categoria3">Categoría 3</label>
               </div>
             </div>
-          
-          
+          </div>
+  
           <div class="form-group row justify-content-center">
-            <div class="col-sm-7">            
-              <input type="submit" value="Registrarse"></input>
+            <div class="col-sm-7">
+              <input type="submit" value="Guardar Cambios"></input>
             </div>
           </div>
         </form>
       </div>
-      
-      
     </div>
   </main>
 
