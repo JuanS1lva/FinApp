@@ -46,54 +46,10 @@
   </header>
 
   <main>
-    <div class="jumbotron container bg-finapp5">
+    <div class="jumbotron container bg-finapp5"> 
       <div class="container border bg-finapp4">
-        <h2 class="text-center my-5" style="color:#1D3557">REGISTRAR EMPRESA</h2>
+        <h2 class="text-center my-5" style="color:#1D3557">REGISTRAR USUARIO</h2>
         <form class="contenedor-form">
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Tipo de Usuario:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <select class="custom-select">
-                <option selected disabled value="">Agregar Tipo de Usuario</option>
-                <option value="0">Persona Natural</option>
-                <option value="1">Persona Jurídica</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Tipo Documento Empresa:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <select class="custom-select">
-                <option selected disabled value="">Agregar Tipo Documento</option>
-                <option value="0">Cédula de Ciudadania</option>
-                <option value="1">Cédula de Extranjería</option>
-                <option value="2">Nit</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Número Documento Empresa:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-                <input type="text" class="form-control" placeholder="Agregar Número de Documento">
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Tipo Documento Usuario:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <select class="custom-select">
-                <option selected disabled value="">Agregar Tipo de Documento</option>
-                <option value="0">Cédula de Ciudadania</option>
-                <option value="1">Cédula de Extranjería</option>
-                <option value="2">Nit</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Número Documento Usuario:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <input type="text" class="form-control" placeholder="Agregar Número de Documento">
-            </div>
-          </div>
           <div class="form-group row justify-content-center">
             <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Nombres:</label>
             <div class="col-sm-4 col-md-5 col-lg-4">
@@ -107,33 +63,52 @@
             </div>
           </div>
           <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Dirección:</label>
-            <div class="col-sm-4 col-md-5 col-lg-4">
-              <input type="text" class="form-control" placeholder="Agregar Dirección">
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Departamento:</label>
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Tipo Documento:</label>
             <div class="col-sm-4 col-md-5 col-lg-4">
               <select class="custom-select">
-                <option selected disabled value="">Agregar Departamento</option>
-                <option value="0">Bogotá D.C</option>
+                <option selected disabled value="">Agregar Tipo de Documento</option>
+                <option value="0">Cédula de Ciudadania</option>
+                <option value="1">Cédula de Extranjería</option>
               </select>
             </div>
           </div>
           <div class="form-group row justify-content-center">
-            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Ciudad:</label>
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Número Documento:</label>
             <div class="col-sm-4 col-md-5 col-lg-4">
-              <select class="custom-select">
-                <option selected disabled value="">Agregar Ciudad</option>
-                <option value="0">Bogotá D.C</option>
-              </select>
+              <input type="text" class="form-control" placeholder="Agregar Número de Documento">
             </div>
           </div>
           <div class="form-group row justify-content-center">
             <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Correo:</label>
             <div class="col-sm-4 col-md-5 col-lg-4">
               <input type="email" class="form-control" placeholder="Agregar Correo">
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Cargo:</label>
+            <div class="col-sm-4 col-md-5 col-lg-4">
+              <input type="text" class="form-control" placeholder="Agregar Cargo">
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Rol:</label>
+            <div class="col-sm-4 col-md-5 col-lg-4">
+              <select class="custom-select">
+                <option selected disabled value="">Agregar Rol</option>
+                <option value="0">Super Usuario</option>
+                <option value="1">Administrador</option>
+                <option value="2">Estándar</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Habilitado:</label>
+            <div class="col-sm-4 col-md-5 col-lg-4">
+              <select class="custom-select">
+                <option selected disabled value="">- Seleccione -</option>
+                <option value="1">SI</option>
+                <option value="0">NO</option>
+              </select>
             </div>
           </div>
           <hr class="my-4">
