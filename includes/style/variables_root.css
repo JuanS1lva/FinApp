@@ -1,0 +1,8 @@
+@font-face {
+    font-family: slim;
+    src: url(/includes/font/Slim\ Joe.otf);
+}
+
+:root {
+    --font-slim: slim;
+}
