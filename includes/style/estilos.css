@@ -1,26 +1,10 @@
-@font-face {
-    font-family: slim;
-    src: url(/assate/font/Slim\ Joe.otf);
-    }
-
 * {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: slim;
-
 }
-
-body {
-    background: url(../img/WhatsApp\ Image\ 2020-09-09\ at\ 10.00.00\ AM.jpeg);
-    background-size: 900px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: slim;
-}
-
 .contenedor-form {
     background: #A8DADC;
     max-width: 500px;
@@ -76,7 +60,6 @@ body {
     border-radius: 2px;
     border-bottom: 4px solid #E63946;
     box-sizing: border-box;
-    font-family: slim;
     font-size: 14px;
     font-weight:normal;
     transition: all .5s ease;
