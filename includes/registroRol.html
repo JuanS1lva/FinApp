@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinApp</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style/style.css">
+  <script src="https://kit.fontawesome.com/5179eaaee1.js" crossorigin="anonymous"></script>
+  <link rel="styleSheet" href="./style/variables_root.css" type="text/css">
+  <link rel="styleSheet" href="./style/formsEstilos.css" type="text/css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-finapp5 m-3">
+      <a class="navbar-brand" href="#"><img src=".//images/logo.png" alt="Logo FinApp" style="max-height: 100px;"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: 40px;"  href="#">FinApp</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index-unlog.html">Cerrar Sesión</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg bg-finapp sticky-top menu m-3">
+      <div class=" navbar-collapse" id="navbarNavAltMarkup">
+        <div class="container navbar-nav">
+          <a class="nav-link" href="#">Inicio</a>
+          <a class="nav-link" href="#">Sección 1</a>
+          <a class="nav-link" href="#">Sección 2</a>
+          <a class="nav-link" href="#">Sección 3</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="jumbotron container bg-finapp5">
+      <div class="container border bg-finapp4">
+        <h2 class="text-center my-5" style="color:#1D3557">REGISTRAR ROL</h2>
+        <form class="contenedor-form">
+          <div class="form-group row justify-content-center">
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Nombre Rol:</label>
+            <div class="col-sm-4 col-md-5 col-lg-4">
+              <input type="text" class="form-control" placeholder="Agregar Rol">
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Descripción:</label>
+            <div class="col-sm-4 col-md-5 col-lg-4">
+              <textarea class="form-control" rows="4" placeholder="Agregar Descripción"></textarea>
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Habilitado:</label>
+            <div class="col-sm-4 col-md-5 col-lg-4">
+              <select class="custom-select">
+                <option selected disabled value="">- Seleccione -</option>
+                <option value="1">SI</option>
+                <option value="0">NO</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <div class="col-sm-7">
+              <input type="submit" value="Guardar Cambios"></input>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+<footer class="page-footer font-small unique-color-dark bg-finapp2">
+
+  <div class="bg-finapp">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0">FinaApp. La contabilidad de tu empresa a tu mano.</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram white-text"> </i>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">FinApp</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>Mas que una simple aplicación para manejar tu contabilidad.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Mapa de Navegación</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Funcionalidades</a>
+        </p>
+        <p>
+          <a href="#!">Documentación</a>
+        </p>
+        <p>
+          <a href="#!">Planes</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i> Bogotá - Colombia</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> juan.silva.vane@gmail.com</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> hunt.pretelt@yahoo.com.co</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> nimzay1106@gmail.com</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> FinApp.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
