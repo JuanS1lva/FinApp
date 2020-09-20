@@ -1,6 +1,15 @@
+
 body{
-  background: #A8DADC;
+  background: #fff;
+  font-family: var(--letra-body);
+  font-size: 18px;
 }
+
+.letra-slogan{
+  font-family: var(--letra-slogan);
+}
+
+/*
 .bg-finapp a{
   color: white;
   font-weight: bold;
@@ -37,4 +46,49 @@ body{
   background-color: #F1FAEE !important;
   color: black !important;
  }
+ */
+
+ .bg-finapp5{
+   background: #457b9dd5;
+   border-radius: 5px;
+ }
+
+ .bg-finapp5>div>div>a{
+   color: #fff;
+ }
+
+ .link-hover li a,
+ .link-hover a,
+ .link-hover p a{
+   text-decoration: none;
+   color: #1D3557;
+   border-bottom: 2px solid #fff;
+ }
+ .link-hover li a:hover,
+ .link-hover a:hover,
+ .link-hover p a:hover{
+  border-bottom: 2px solid #457b9dd5;
+  color: #FAA307;
+}
+.link-hover li a,
+.link-hover a,
+.link-hover p a{
+  transition: border-bottom 0.8s linear 0.2s;
+  transition: color 0.8s linear 0.2s;
+}
+
+/* FOOTER */
+ .border-container{
+  box-shadow: 0 0 8px #333;
+}
  
+div h6{
+  font-family: var(--letra-lema);
+  color: #1D3557;
+}
+div a i{
+  color: #FAA307;
+}
+div p{
+  color: #457B9D;
+}

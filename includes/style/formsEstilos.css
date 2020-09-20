@@ -1,3 +1,16 @@
+body{
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: slim;*/
+}
+
+.borde-seccion{
+    border-top: 1px solid;
+    border-width: 3px;
+    border-color: #000;
+    border-radius: 5px;
+    margin: 0px auto;   /*Centra el elemento en el contenedor html*/
+}
 
 .contenedor-form input[type="text"],
 .contenedor-form input[type="password"],
@@ -22,6 +35,7 @@
 .contenedor-form input[type="text"]:focus,
 .contenedor-form input[type="password"]:focus,
 .contenedor-form input[type="email"]:focus,
+.contenedor-form input[type="date"]:focus,
 .contenedor-form textarea:focus,
 .contenedor-form select:focus {
     border-bottom: 4px solid navy;
@@ -41,10 +55,43 @@
 }
 
 .contenedor-form input[type="submit"]:hover {
-    background:var(--bg-hover-submit);
+    /*background:var(--bg-hover-submit);*/
+    background:#1d3557c9;
 }
 
 .tabla-encabezado{
+    /*
     border-bottom: 4px solid var(--color-primario);
-    background:#F1FAEE;
+    background:var(--bg-hover-submit);*/
+    border-bottom: 4px solid #1D3557;
+}
+
+.table-admin>tbody>tr:nth-child(2n){
+    background:#a8dadc81;
+}
+
+.table-admin>tbody>tr:hover {
+    background:#f1faeeb4;
+}
+
+.boton a{
+    text-decoration: none;
+    border-radius: 3px;
+    color: white;
+    width: 100%;
+    padding: 10px 10px;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.bg-navegacion a{
+    background:#1D3557;
+}
+
+.bg-navegacion a:hover{
+    background:#1d3557c9;
 }
