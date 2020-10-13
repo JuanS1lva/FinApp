@@ -1,40 +1,37 @@
-/*
 @font-face {
     font-family: caviarDreams;
-    src: url(../font/CaviarDreams.ttf);
+    src: url(../src/assets/font/CaviarDreams.ttf);
 }
 
 @font-face {
     font-family: caviarDreamsBold;
-    src: url(../font/CaviarDreams_Bold.ttf);
+    src: url(../src/assets/font/CaviarDreams_Bold.ttf);
 }
 
 @font-face {
     font-family: caviarDreamsItalic;
-    src: url(../font/CaviarDreams_Italic.ttf);
+    src: url(../src/assets/font/CaviarDreams_Italic.ttf);
 }
 
 @font-face {
     font-family: caviarDreamsBoldItalic;
-    src: url(../font/CaviarDreams_BoldItalic.ttf);
+    src: url(../src/assets/font/CaviarDreams_BoldItalic.ttf);
 }
 
 @font-face {
     font-family: dolceVita;
-    src: url(../font/Dolce\ Vita.ttf);
+    src: url(../src/assets/font/Dolce_Vita.ttf);
 }
 
 @font-face {
     font-family: dolceVitaBold;
-    src: url(../font/Dolce\ Vita\ Heavy\ Bold.ttf);
+    src: url(../src/assets/font/Dolce_Vita_Heavy_Bold.ttf);
 }
 
 @font-face {
     font-family: dolceVitaLight;
-    src: url(../font/Dolce\ Vita\ Light.ttf);
+    src: url(../src/assets/font/Dolce_Vita_Light.ttf);
 }
-
-*/
 
 :root {
     --letra-slogan: dolceVitaBold;
