@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,13 @@ import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { EquipoComponent } from './equipo/equipo.component';
 import { PerfilesComponent } from './perfiles/perfiles.component';
+
+const appRouter: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'equipo', component: EquipoComponent },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' }
+];
+
 
 @NgModule({
   declarations: [
@@ -24,7 +32,9 @@ import { PerfilesComponent } from './perfiles/perfiles.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule,
+    RouterModule.forRoot(appRouter)
   ],
   providers: [],
   bootstrap: [AppComponent]
