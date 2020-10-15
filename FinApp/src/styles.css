@@ -37,7 +37,11 @@
     --letra-slogan: dolceVitaBold;
     --letra-body: caviarDreams;
     --letra-lema: caviarDreamsBold;
-    --color-primario: #E63946;
+    --color-cp:#457b9dd5;
+    --color-cs:#1D3557;
+    --color-cc:#FAA307;
+    --text-color:#fff;
+    --text-colorsg: #457B9D;
     --bg-hover-submit:#A8DADC;
 }
 
@@ -94,14 +98,14 @@ body{
    .link-hover a,
    .link-hover p a{
      text-decoration: none;
-     color: #1D3557;
-     border-bottom: 2px solid #fff;
+     color:var(--color-cs);
+     border-bottom: 2px solid var(--text-color);
    }
    .link-hover li a:hover,
    .link-hover a:hover,
    .link-hover p a:hover{
-    border-bottom: 2px solid #457b9dd5;
-    color: #FAA307;
+    border-bottom: 2px solid var(--color-cp);
+    color: var(--color-cc);
   }
   .link-hover li a,
   .link-hover a,

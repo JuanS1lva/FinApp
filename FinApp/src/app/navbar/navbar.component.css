@@ -1,9 +1,9 @@
 .bg-finapp5{
-    background: #457b9dd5;
+    background: var(--color-cp);
     border-radius: 5px;
   }
 
   .bg-finapp5>div>div>a{
-    color: #fff;
+    color: var(--text-color);
   }
  
