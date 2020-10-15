@@ -14,7 +14,7 @@ import { PerfilesComponent } from './perfiles/perfiles.component';
 
 const appRouter: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'equipo', component: EquipoComponent },
+  { path: 'perfiles', component: PerfilesComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
