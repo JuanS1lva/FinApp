@@ -5,12 +5,12 @@
    
   div h6{
     font-family: var(--letra-lema);
-    color: #1D3557;
+    color: var(--color-cs);
   }
   div a i{
-    color: #FAA307;
+    color: var(--color-cc);
   }
   div p{
-    color: #457B9D;
+    color: var(--text-colorsg);
   }
   
