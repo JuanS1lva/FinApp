@@ -110,4 +110,54 @@ body{
     transition: color 0.8s linear 0.2s;
   }
   
+  
+/* Estilo de formularios */
+
+.contenedor-form input[type="text"],
+.contenedor-form input[type="password"],
+.contenedor-form input[type="email"],
+.contenedor-form textarea,
+.contenedor-form select {
+    outline: none;
+    display: block;
+    width: 100%;
+    background:#F1FAEE;
+    color:black;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid #1D3557;
+    box-sizing: border-box;
+    /*font-family: font-slim;*/
+    font-size: 14px;
+    font-weight:normal;
+    transition: all .5s ease;
+}
+
+.contenedor-form input[type="text"]:focus,
+.contenedor-form input[type="password"]:focus,
+.contenedor-form input[type="email"]:focus,
+.contenedor-form textarea:focus,
+.contenedor-form select:focus {
+    border-bottom: 4px solid #FAA307;
+}
+
+/*
+.contenedor-form input[type="submit"] {
+    background:#1D3557;
+    color: white;
+    width: 100%;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Roboto;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.contenedor-form input[type="submit"]:hover {
+    background:#A8DADC;
+}
+*/
  

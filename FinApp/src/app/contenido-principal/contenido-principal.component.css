@@ -1,0 +1,67 @@
+/* Fondo con imagen */
+.fondo{
+    background: url(../../assets/images/fondoInfoFinApp.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size:cover;
+}
+.info div{
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.info h4{
+    font-weight: 900;
+    color:var(--letra-lema);
+}
+
+/* Fondo con color */
+.fondocolor{
+    background: #457B9D;
+    background: linear-gradient(top, rgba(168,218,220,1) 0%, rgba(69,123,157,1) 100%);
+    background: linear-gradient(to bottom, rgba(69,123,157, 0.651) 0%, rgba(69,123,157,1) 100%);
+}
+
+.row div h3{
+    font-family: caviarDreamsBold;
+}
+
+/*Estilos de card*/
+.card{
+    transition: .5s ease;
+    border-radius: 0;
+    transform: perspective(3em) rotateX(0deg) rotateY(-1.175deg) rotateZ(-1deg);
+}
+.card .card-header{
+    border-radius: 0;
+}
+.card .card-header img{
+    height: 100px;
+    width: 100px;
+}
+.card .card-footer{
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
+.card .card-header, .card-footer{
+    transition: .5s ease;
+}
+
+.card:hover{
+    box-shadow: 0px 0px 20px -3px rgba(143, 143, 143, .75);
+    border-color:#FAA307; 
+    transform: perspective(0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+.card-header:hover, .card-footer:hover{
+    color: #FAA307;
+    border-color: #FAA307;
+}
+
+.card-text {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.card-title {
+    font-weight: 900;
+    text-align: center;
+}

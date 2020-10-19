@@ -11,10 +11,13 @@ import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { EquipoComponent } from './equipo/equipo.component';
 import { PerfilesComponent } from './perfiles/perfiles.component';
+import { ContenidoPrincipalComponent } from './contenido-principal/contenido-principal.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const appRouter: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'perfiles', component: PerfilesComponent },
+  { path: 'registro', component: RegistroComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
@@ -28,7 +31,9 @@ const appRouter: Routes = [
     FooterComponent,
     BannerComponent,
     EquipoComponent,
-    PerfilesComponent
+    PerfilesComponent,
+    ContenidoPrincipalComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
