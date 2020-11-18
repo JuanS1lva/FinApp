@@ -3,15 +3,17 @@ const express = require("express");
 const router = express.Router();
 
 const Departamento = require("../model/departamento");
-const {
-  Usuario
-} = require("../model/usuario");
+const { Usuario } = require("../model/usuario");
 const auth = require("../middleware/auth");
 
 router.post("/", auth, async (req, res) => {
   const usuario = await Usuario.findById(req.usuario._id);
   if (!usuario) return res.status(401).send("el usuario no existe");
-  const arrayDepartamento = [{
+  const cantDepartamento = await Departamento.find().countDocuments();
+  if (cantDepartamento > 0)
+    return res.status(401).send("ya estan creados los dep");
+  const arrayDepartamento = [
+    {
       nombre: "Antioquia",
       codigo: "5",
     },
@@ -144,19 +146,16 @@ router.post("/", auth, async (req, res) => {
       codigo: "99",
     },
   ];
-  arrayDepartamento.forEach({
-    
-  })
-
-
-
-
-  const departamento = new Departamento({
-    nombre: "Antioquia",
-    codigo: "5",
+  let arrayResult = [];
+  arrayDepartamento.forEach(async (item) => {
+    const departamento = new Departamento({
+      nombre: item.nombre,
+      codigo: item.codigo,
+    });
+    const result = await departamento.save();
+    arrayResult.push(result);
   });
-  const result = await departamento.save();
-  res.status(200).send(result);
+  res.status(200).send({ arrayResult });
 });
 
 module.exports = router;
