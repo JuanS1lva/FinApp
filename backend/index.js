@@ -6,6 +6,7 @@ const usuario = require("./routes/usuario");
 const empusuario = require("./routes/empusuario");
 const auth = require("./routes/auth");
 const ciudad = require("./routes/ciudad");
+const gasto = require("./routes/gasto");
 //const tablero = require("./routes/tablero")
 //app
 const app = express();
@@ -15,6 +16,7 @@ app.use("/api/usuario/", usuario);
 app.use("/api/empusuario/", empusuario);
 app.use("/api/auth/", auth);
 app.use("/api/ciudad/", ciudad);
+app.use("/api/gasto/", gasto);
 //app.use("/api/tablero/",tablero)
 
 const port = process.env.PORT || 3000;
