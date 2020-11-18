@@ -8,7 +8,7 @@ const esquemaSede = new mongoose.Schema({
   idUsuarioResponsable: String,
   idCategoria: String,
   habilitado: String,
-  fecha: {
+  fechaRegistro: {
     type: Date,
     default: Date.now,
   },
