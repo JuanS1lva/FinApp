@@ -19,6 +19,10 @@ const esquemaUsuario = new mongoose.Schema({
   cargo: {
     type: String,
   },
+  rol: {
+    type: Array,
+    default:["Reader"]
+  },
   habilitado: {
     type: Boolean,
   },
