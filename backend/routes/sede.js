@@ -9,7 +9,7 @@ const auth = require("../middleware/auth");
 router.get("/lista", auth, async (req, res) => {
   const usuario = await Usuario.findById(req.usuario._id);
   if (!usuario) return res.status(401).send("usuario no existe en DB");
-  const sede = await Sede.find({ idUsuario: req.usuario._id, habilitado: true });
+  const sede = await Sede.find({ idEmpresa: req.usuario.idEmpresa, habilitado: true });
   res.send(sede);
 });
 // actualizar sede
@@ -23,7 +23,6 @@ router.put("/", auth, async (req, res) => {
       nombre: req.body.nombre,
       descripcion: req.body.descripcion,
       idUsuarioResponsable: req.body.idUsuarioResponsable,
-      idCategoria: req.body.idCategoria,
       habilitado: req.body.habilitado,
     },
     {
@@ -68,7 +67,6 @@ router.post("/", auth, async (req, res) => {
     nombre: req.body.nombre,
     descripcion: req.body.descripcion,
     idUsuarioResponsable: req.body.idUsuarioResponsable,
-    idCategoria: req.body.idCategoria,
     habilitado: req.body.habilitado,
   });
   const result = await sede.save();

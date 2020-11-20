@@ -2,12 +2,12 @@
 const mongoose = require("mongoose");
 
 const esquemaSede = new mongoose.Schema({
+  idEmpresa: String,
   idUsuario: String,
   nombre: String,
   descripcion: String,
   idUsuarioResponsable: String,
-  idCategoria: String,
-  habilitado: String,
+  habilitado: Boolean,
   fechaRegistro: {
     type: Date,
     default: Date.now,
