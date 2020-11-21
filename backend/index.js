@@ -7,7 +7,7 @@ const empusuario = require("./routes/empusuario");
 const auth = require("./routes/auth");
 const ciudad = require("./routes/ciudad");
 const sede = require("./routes/sede");
-//const tablero = require("./routes/tablero")
+const gasto = require("./routes/gasto");
 //app
 const app = express();
 app.use(cors());
@@ -17,7 +17,7 @@ app.use("/api/empusuario/", empusuario);
 app.use("/api/auth/", auth);
 app.use("/api/ciudad/", ciudad);
 app.use("/api/sede/", sede);
-//app.use("/api/tablero/",tablero)
+app.use("/api/gasto/", gasto);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
