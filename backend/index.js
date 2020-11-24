@@ -10,6 +10,7 @@ const ciudad = require("./routes/ciudad");
 const categoria = require("./routes/categoria")
 const sede = require("./routes/sede");
 const gasto = require("./routes/gasto");
+const presupuesto = require("./routes/presupuesto");
 //app
 const app = express();
 app.use(cors());
@@ -22,6 +23,7 @@ app.use("/api/ciudad/", ciudad);
 app.use("/api/categoria/",categoria)
 app.use("/api/sede/", sede);
 app.use("/api/gasto/", gasto);
+app.use("/api/presupuesto/", presupuesto);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
