@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router'
+/*mport { RouterModule, Routes } from '@angular/router';*/
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,14 +13,17 @@ import { EquipoComponent } from './equipo/equipo.component';
 import { PerfilesComponent } from './perfiles/perfiles.component';
 import { ContenidoPrincipalComponent } from './contenido-principal/contenido-principal.component';
 import { RegistroComponent } from './registro/registro.component';
+import { LoginComponent } from './login/login.component';
+/*import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // esta referencia siempre va, independiente el framework de front utilizado (boostrap, matrial, otros)
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; // va igual si se configura https*/
 
+/*
 const appRouter: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'perfiles', component: PerfilesComponent },
   { path: 'registro', component: RegistroComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
-];
-
+];*/
 
 @NgModule({
   declarations: [
@@ -33,15 +36,20 @@ const appRouter: Routes = [
     EquipoComponent,
     PerfilesComponent,
     ContenidoPrincipalComponent,
-    RegistroComponent
+    RegistroComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+     /*
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     RouterModule,
-    RouterModule.forRoot(appRouter)
+    RouterModule.forRoot(appRouter)*/
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
