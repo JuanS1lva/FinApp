@@ -79,6 +79,7 @@ body{
 /* Estilo de formularios */
 
 .contenedor-form input[type="text"],
+.contenedor-form input[type="number"],
 .contenedor-form input[type="password"],
 .contenedor-form input[type="email"],
 .contenedor-form textarea,
