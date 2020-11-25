@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { PerfilesComponent } from './perfiles/perfiles.component';
 
 // Navegación de la aplicación
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
     path: 'registro',
     component: RegistroComponent,
   },
+  {
+    path: 'perfiles',
+    component: PerfilesComponent,
+  }
 ];
 
 @NgModule({
