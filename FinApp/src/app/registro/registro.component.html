@@ -1,19 +1,34 @@
 <main>
   <div class="container border">
     <h2 class="text-center my-5">REGISTRAR EMPRESA</h2>
-    <form class="contenedor-form">
+    <form class="contenedor-form" (ngSubmit)="registrarEmp()" ngNativeValidate>
       <div class="form-group row justify-content-center">
-        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Tipo de Usuario:</label>
+        <label
+          for="tipoUsuario"
+          class="col-sm-4 col-md-4 col-lg-3 col-form-label"
+          >Tipo de Usuario:</label
+        >
         <div class="col-sm-4 col-md-5 col-lg-4">
-          <select class="custom-select">
-            <option selected disabled value="">Agregar Tipo de Usuario</option>
-            <option value="1">Persona Natural</option>
-            <option value="2">Persona Jurídica</option>
+          <select
+            [(ngModel)]="objTipoUsuario"
+            [ngModelOptions]="{ standalone: true }"
+            class="custom-select"
+            name="tipoUsuario"
+            required
+          >
+            <!-- <option value="0" disabled selected>Agregar Tipo de Usuario</option> -->
+            <option [ngValue] = "null" selected> Select Category </option>
+            <option *ngFor="let item of lstTipoUsuario" [ngValue]="item">
+              {{ item.nombre }}
+            </option>
           </select>
+          <!-- {{objTipoUsuario | json}}  Visualizar Salida-->
         </div>
       </div>
       <div class="form-group row justify-content-center">
-        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Tipo Documento:</label>
+        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label"
+          >Tipo Documento:</label
+        >
         <div class="col-sm-4 col-md-5 col-lg-4">
           <select class="custom-select">
             <option selected disabled value="">Agregar Tipo Documento</option>
@@ -24,25 +39,45 @@
         </div>
       </div>
       <div class="form-group row justify-content-center">
-        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Número Documento:</label>
+        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label"
+          >Número Documento:</label
+        >
         <div class="col-sm-4 col-md-5 col-lg-4">
-          <input type="text" class="form-control" placeholder="Agregar Número de Documento">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Agregar Número de Documento"
+          />
         </div>
       </div>
       <div class="form-group row justify-content-center">
-        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Nombres/ Razon Social:</label>
+        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label"
+          >Nombres/ Razon Social:</label
+        >
         <div class="col-sm-4 col-md-5 col-lg-4">
-          <input type="text" class="form-control" placeholder="Agregar Nombres">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Agregar Nombres"
+          />
         </div>
       </div>
       <div class="form-group row justify-content-center">
-        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Dirección:</label>
+        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label"
+          >Dirección:</label
+        >
         <div class="col-sm-4 col-md-5 col-lg-4">
-          <input type="text" class="form-control" placeholder="Agregar Dirección">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Agregar Dirección"
+          />
         </div>
       </div>
       <div class="form-group row justify-content-center">
-        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Departamento:</label>
+        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label"
+          >Departamento:</label
+        >
         <div class="col-sm-4 col-md-5 col-lg-4">
           <select class="custom-select">
             <option selected disabled value="">Agregar Departamento</option>
@@ -51,7 +86,9 @@
         </div>
       </div>
       <div class="form-group row justify-content-center">
-        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label">Ciudad:</label>
+        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label"
+          >Ciudad:</label
+        >
         <div class="col-sm-4 col-md-5 col-lg-4">
           <select class="custom-select">
             <option selected disabled value="">Agregar Ciudad</option>
@@ -62,16 +99,36 @@
       <!-- Seccion credenciales -->
       <div class="col-sm-12 col-md-9 col-lg-7 my-4 p-2 borde-seccion">
         <div class="form-group row">
-          <label for="" class="col-sm-4 col-md-5 col-lg-5 col-form-label">Correo:</label>
+          <label for="" class="col-sm-4 col-md-5 col-lg-5 col-form-label"
+            >Correo:</label
+          >
           <div class="col-sm-4 col-md-7 col-lg-7">
-            <input type="email" class="form-control" placeholder="Agregar Correo">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Agregar Correo"
+            />
           </div>
         </div>
         <div class="form-group row">
-          <label for="" class="col-sm-4 col-md-5 col-lg-5 col-form-label">Contraseña:</label>
+          <label for="" class="col-sm-4 col-md-5 col-lg-5 col-form-label"
+            >Contraseña:</label
+          >
           <div class="col-sm-4 col-md-7 col-lg-7">
-            <input type="password" class="form-control" placeholder="Agregar Contraseña">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Agregar Contraseña"
+            />
           </div>
+        </div>
+      </div>
+
+      <div class="form-group row justify-content-center">
+        <div class="col-sm-7">
+          <button class="btn-lg btn-block" type="submit">
+            <i class="fas fa-database"></i> Registrarse
+          </button>
         </div>
       </div>
     </form>

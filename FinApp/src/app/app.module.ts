@@ -14,8 +14,9 @@ import { PerfilesComponent } from './perfiles/perfiles.component';
 import { ContenidoPrincipalComponent } from './contenido-principal/contenido-principal.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
-/*import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // esta referencia siempre va, independiente el framework de front utilizado (boostrap, matrial, otros)
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; // va igual si se configura https*/
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // esta referencia siempre va, independiente el framework de front utilizado (boostrap, matrial, otros)
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; // va igual si se configura https
+import { AuthService } from './service/auth.service';
 
 /*
 const appRouter: Routes = [
@@ -42,14 +43,14 @@ const appRouter: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-     /*
     FormsModule,
     HttpClientModule,
+    /*
     ReactiveFormsModule,
     RouterModule,
     RouterModule.forRoot(appRouter)*/
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

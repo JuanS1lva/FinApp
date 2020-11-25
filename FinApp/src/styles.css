@@ -54,46 +54,7 @@ body{
   .letra-slogan{
     font-family: var(--letra-slogan);
   }
-  
-  /*
-  .bg-finapp a{
-    color: white;
-    font-weight: bold;
-  }
-  .bg-finapp5 a{
-    color: #1D3557;
-    font-weight: bold;
-  }
-  .active{
-    text-decoration: overline;
-  }
-  .bg-finapp{
-   background: #E63946 !important;
-   background-color: #E63946 !important;
-   color: white !important;
-  }
-  .bg-finapp2{
-    background: #1D3557 !important;
-    background-color: #1D3557 !important;
-    color: white !important;
-   }
-   .bg-finapp3{
-    background: #457B9D !important;
-    background-color: #457B9D !important;
-    color: white !important;
-   }
-   .bg-finapp4{
-    background: #A8DADC !important;
-    background-color: #A8DADC !important;
-    color: white !important;
-   }
-   .bg-finapp5{
-    background: #F1FAEE !important;
-    background-color: #F1FAEE !important;
-    color: black !important;
-   }
-   */
-  
+
    .link-hover li a,
    .link-hover a,
    .link-hover p a{
@@ -145,8 +106,8 @@ body{
     border-bottom: 4px solid #FAA307;
 }
 
-/*
-.contenedor-form input[type="submit"] {
+
+.contenedor-form button[type="submit"] {
     background:#1D3557;
     color: white;
     width: 100%;
@@ -160,8 +121,8 @@ body{
     transition: all .5s ease;
 }
 
-.contenedor-form input[type="submit"]:hover {
-    background:#A8DADC;
+.contenedor-form button[type="submit"]:hover {
+  background:#1d3557c9;
 }
-*/
+
  
