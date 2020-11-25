@@ -1,11 +1,15 @@
 <main>
   <div class="container border">
     <h2 class="text-center my-5">REGISTRAR EMPRESA</h2>
-    <form class="contenedor-form" (ngSubmit)="registrarEmp()" ngNativeValidate>
+    <form
+      role="form"
+      class="contenedor-form"
+      (ngSubmit)="registrarEmp()"
+      #form="ngForm"
+      ngNativeValidate
+    >
       <div class="form-group row justify-content-center">
-        <label
-          for="tipoUsuario"
-          class="col-sm-4 col-md-4 col-lg-3 col-form-label"
+        <label for="" class="col-sm-4 col-md-4 col-lg-3 col-form-label"
           >Tipo de Usuario:</label
         >
         <div class="col-sm-4 col-md-5 col-lg-4">
@@ -13,11 +17,11 @@
             [(ngModel)]="objTipoUsuario"
             [ngModelOptions]="{ standalone: true }"
             class="custom-select"
-            name="tipoUsuario"
             required
           >
-            <!-- <option value="0" disabled selected>Agregar Tipo de Usuario</option> -->
-            <option [ngValue] = "null" selected> Select Category </option>
+            <!-- <option [ngValue]="0" [disabled]="true" selected>All</option> -->
+            <!-- <option [ngValue]="1" selected>All</option> -->
+            <option value="" selected>Agregar Tipo de Usuario</option>
             <option *ngFor="let item of lstTipoUsuario" [ngValue]="item">
               {{ item.nombre }}
             </option>
@@ -30,11 +34,16 @@
           >Tipo Documento:</label
         >
         <div class="col-sm-4 col-md-5 col-lg-4">
-          <select class="custom-select">
-            <option selected disabled value="">Agregar Tipo Documento</option>
-            <option value="1">Cédula de Ciudadania</option>
-            <option value="2">Cédula de Extranjería</option>
-            <option value="3">Nit</option>
+          <select
+            [(ngModel)]="objTipoDocumento"
+            [ngModelOptions]="{ standalone: true }"
+            class="custom-select"
+            required
+          >
+            <option value="" selected>Agregar Tipo Documento</option>
+            <option *ngFor="let item of lstTipoDocumento" [ngValue]="item">
+              {{ item.nombre }}
+            </option>
           </select>
         </div>
       </div>
@@ -44,9 +53,12 @@
         >
         <div class="col-sm-4 col-md-5 col-lg-4">
           <input
-            type="text"
+            [(ngModel)]="registrarUsuarioEmp.numeroDocumento"
+            [ngModelOptions]="{ standalone: true }"
+            type="number"
             class="form-control"
             placeholder="Agregar Número de Documento"
+            required
           />
         </div>
       </div>
@@ -56,9 +68,12 @@
         >
         <div class="col-sm-4 col-md-5 col-lg-4">
           <input
+            [(ngModel)]="registrarUsuarioEmp.razonSocial"
+            [ngModelOptions]="{ standalone: true }"
             type="text"
             class="form-control"
-            placeholder="Agregar Nombres"
+            placeholder="Agregar Nombres/ Razón Social"
+            required
           />
         </div>
       </div>
@@ -68,9 +83,12 @@
         >
         <div class="col-sm-4 col-md-5 col-lg-4">
           <input
+            [(ngModel)]="registrarUsuarioEmp.direccion"
+            [ngModelOptions]="{ standalone: true }"
             type="text"
             class="form-control"
             placeholder="Agregar Dirección"
+            required
           />
         </div>
       </div>
@@ -79,9 +97,16 @@
           >Departamento:</label
         >
         <div class="col-sm-4 col-md-5 col-lg-4">
-          <select class="custom-select">
-            <option selected disabled value="">Agregar Departamento</option>
-            <option value="1">Bogotá D.C</option>
+          <select
+            [(ngModel)]="objDepartamento"
+            [ngModelOptions]="{ standalone: true }"
+            class="custom-select"
+            required
+          >
+            <option value="" selected>Agregar Departamento</option>
+            <option *ngFor="let item of lstDepartamento" [ngValue]="item">
+              {{ item.nombre }}
+            </option>
           </select>
         </div>
       </div>
@@ -90,9 +115,16 @@
           >Ciudad:</label
         >
         <div class="col-sm-4 col-md-5 col-lg-4">
-          <select class="custom-select">
-            <option selected disabled value="">Agregar Ciudad</option>
-            <option value="1">Bogotá D.C</option>
+          <select
+            [(ngModel)]="objCiudad"
+            [ngModelOptions]="{ standalone: true }"
+            class="custom-select"
+            required
+          >
+            <option value="" selected>Agregar Ciudad</option>
+            <option *ngFor="let item of lstCiudad" [ngValue]="item">
+              {{ item.nombre }}
+            </option>
           </select>
         </div>
       </div>
@@ -104,9 +136,12 @@
           >
           <div class="col-sm-4 col-md-7 col-lg-7">
             <input
+              [(ngModel)]="registrarUsuarioEmp.correo"
+              [ngModelOptions]="{ standalone: true }"
               type="email"
               class="form-control"
               placeholder="Agregar Correo"
+              required
             />
           </div>
         </div>
@@ -116,9 +151,12 @@
           >
           <div class="col-sm-4 col-md-7 col-lg-7">
             <input
+              [(ngModel)]="registrarUsuarioEmp.pass"
+              [ngModelOptions]="{ standalone: true }"
               type="password"
               class="form-control"
               placeholder="Agregar Contraseña"
+              required
             />
           </div>
         </div>
