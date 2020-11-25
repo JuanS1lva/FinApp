@@ -17,6 +17,10 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // esta referencia siempre va, independiente el framework de front utilizado (boostrap, matrial, otros)
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; // va igual si se configura https
 import { AuthService } from './service/auth.service';
+import { CrearComponent } from './categoria/crear/crear.component';
+import { ListaComponent } from './categoria/lista/lista.component';
+import { AuthGuard } from './guard/auth.guard'
+import { TokenInterceptorService } from './service/token-interceptor.service'
 
 /*
 const appRouter: Routes = [
@@ -39,6 +43,8 @@ const appRouter: Routes = [
     ContenidoPrincipalComponent,
     RegistroComponent,
     LoginComponent,
+    CrearComponent,
+    ListaComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,13 @@ const appRouter: Routes = [
     RouterModule,
     RouterModule.forRoot(appRouter)*/
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }
+    ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

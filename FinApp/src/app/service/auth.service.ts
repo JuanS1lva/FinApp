@@ -6,8 +6,9 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class AuthService {
-  private registroUrl = `${environment.apiUrl}/usuario/`;
-  private loginUrl = `${environment.apiUrl}/auth/`;
+  private registroUrl = `${environment.apiUrl}/usuario`;
+  private loginUrl = `${environment.apiUrl}/auth`;
+  private categoriaUrl = `${environment.apiUrl}/categorias`;
 
   constructor(private http: HttpClient) {}
 
@@ -18,5 +19,17 @@ export class AuthService {
 
   loginUsuario(usuario) {
     return this.http.post<any>(this.loginUrl, usuario);
+  }
+
+  registrarCategoria(categoria) {
+    return this.http.post<any>(this.categoriaUrl, categoria);
+  }
+
+  loginOn(){
+    return !!localStorage.getItem('token')
+  }
+
+  obtenerToken(){
+    return localStorage.getItem('token')
   }
 }
