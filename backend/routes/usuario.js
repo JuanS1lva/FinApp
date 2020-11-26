@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
     tipoDocumento: req.body.tipoDocumento,
     numeroDocumento: req.body.numeroDocumento,
     rol: ["SuperAdmin"],
-    cargo: req.body.cargo,
+    cargo: "NA",
     habilitado: true,
     correo: req.body.correo,
     pass: req.body.pass,

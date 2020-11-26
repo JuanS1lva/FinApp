@@ -10,7 +10,7 @@ router.get("/lista", auth, async (req, res) => {
   const usuario = await Usuario.findById(req.usuario._id);
   if (!usuario) return res.status(401).send("usuario no existe en DB");
 
-  // obtener todos los usuarios
+  // obtener todos los usuarios por empresa
   const lstUsuario = await Usuario.find({
     idEmpresa: req.usuario.idEmpresa,
     habilitado: true,
@@ -26,18 +26,21 @@ router.get("/lista", auth, async (req, res) => {
     const empresaUsu = {
       _id: item._id,
       nombre: item.nombreApellido,
+      cargo: item.cargo,
       tipoDocumento: item.tipoDocumento,
       numeroDocumento: item.numeroDocumento,
       correo: item.correo,
       habilitado: item.habilitado ? "SI" : "NO",
+      esUsuarioPrincipal: item.esUsuarioPrincipal
     };
     listaEmpresaUsu.push(empresaUsu);
   });
 
   const lstEmpresaUsu = {
-    nombreEmpresa: empresa.razonSocial,
-    naturaleza: empresa.naturaleza,
+    empresa: empresa.razonSocial + ' / ' + empresa.naturaleza,
     direccion: empresa.direccion,
+    nombreUsuario: usuario.nombreApellido,
+    cargoUsuario: usuario.cargo,
     listaUsuarios: listaEmpresaUsu,
   };
 
@@ -80,6 +83,7 @@ router.post("/", auth, async (req, res) => {
     tipoDocumento: req.body.tipoDocumento,
     numeroDocumento: req.body.numeroDocumento,
     rol: [req.body.rol],
+    cargo: req.body.cargo,
     habilitado: true,
     correo: req.body.correo,
     pass: req.body.pass,
