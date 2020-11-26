@@ -26,11 +26,11 @@ export class RegistroComponent implements OnInit {
   objTipoDocumento = this.lstTipoDocumento[0];
 
   // lista departamentos
-  lstDepartamento = [{ id: 1, nombre: 'Bogotá D.C', codigo: "11" }];
+  lstDepartamento = [{ id: 1, nombre: 'Bogotá D.C', codigo: '11' }];
   objDepartamento = this.lstDepartamento[0];
 
   // lista ciudades
-  lstCiudad = [{ id: 1, nombre: 'Bogotá D.C', codigo: "11001" }];
+  lstCiudad = [{ id: 1, nombre: 'Bogotá D.C', codigo: '11001' }];
   objCiudad = this.lstCiudad[0];
 
   // Datos obtenidos desde el HTML
@@ -57,6 +57,7 @@ export class RegistroComponent implements OnInit {
     this.auth.registroUsuario(this.registrarUsuarioEmp).subscribe(
       (res) => {
         console.log(res);
+        this.router.navigate(['/login']); // ir al login
       },
       (err) => console.log(err)
     );

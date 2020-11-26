@@ -14,21 +14,16 @@ import { PerfilesComponent } from './perfiles/perfiles.component';
 import { ContenidoPrincipalComponent } from './contenido-principal/contenido-principal.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // esta referencia siempre va, independiente el framework de front utilizado (boostrap, matrial, otros)
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // FormsModule: esta referencia siempre va, independiente el framework de front utilizado (boostrap, matrial, otros). ReactiveFormsModule: se referencia para que funciones junto con el Interceptor
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; // va igual si se configura https
 import { AuthService } from './service/auth.service';
 import { CrearComponent } from './categoria/crear/crear.component';
 import { ListaComponent } from './categoria/lista/lista.component';
-import { AuthGuard } from './guard/auth.guard'
-import { TokenInterceptorService } from './service/token-interceptor.service'
-
-/*
-const appRouter: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'perfiles', component: PerfilesComponent },
-  { path: 'registro', component: RegistroComponent },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' }
-];*/
+import { AuthGuard } from './guard/auth.guard';
+import { TokenInterceptorService } from './service/token-interceptor.service';
+import { ListarSedeComponent } from './sede/listar-sede/listar-sede.component';
+import { CrearSedeComponent } from './sede/crear-sede/crear-sede.component';
+import { SedeService } from './service/sede.service';
 
 @NgModule({
   declarations: [
@@ -45,24 +40,26 @@ const appRouter: Routes = [
     LoginComponent,
     CrearComponent,
     ListaComponent,
+    ListarSedeComponent,
+    CrearSedeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    /*
     ReactiveFormsModule,
-    RouterModule,
-    RouterModule.forRoot(appRouter)*/
   ],
-  providers: [AuthService, AuthGuard, 
+  providers: [
+    AuthService,
+    SedeService,
+    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass:TokenInterceptorService,
-      multi:true
-    }
-    ],
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

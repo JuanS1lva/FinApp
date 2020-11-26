@@ -1,0 +1,39 @@
+<main>
+  <div class="container border">
+    <div
+      class="d-sm-flex flex-sm-column d-md-flex flex-md-row justify-content-md-between my-5"
+    >
+      <h3 class="text-center">ADMINISTRAR SEDE</h3>
+      <div class="boton bg-navegacion">
+        <a routerLink="crearSede">
+          <i class="fas fa-plus-circle px-2"></i>Registrar Sede
+        </a>
+      </div>
+    </div>
+    <div class="table-responsive-sm table-responsive-md table-responsive-lg">
+      <table class="table table-admin mb-5">
+        <thead class="tabla-encabezado">
+          <tr>
+            <th scope="col">Sede</th>
+            <th scope="col">Responsable</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Habilitado</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="lista.length">
+          <tr *ngFor="let item of lista">
+            <th scope="row">{{ item.nombre }}</th>
+            <td>{{ item.idUsuarioResponsable }}</td>
+            <td>{{ item.descripcion }}</td>
+            <td>{{ item.habilitado }}</td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="!lista.length">
+          <tr>
+            <td colspan="4">No hay registros para mostrar</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

@@ -5,6 +5,9 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { PerfilesComponent } from './perfiles/perfiles.component';
 import { CrearComponent } from './categoria/crear/crear.component';
+import { ListarSedeComponent } from './sede/listar-sede/listar-sede.component';
+import { CrearSedeComponent } from './sede/crear-sede/crear-sede.component';
+import { AuthGuard } from './guard/auth.guard';
 
 // Navegación de la aplicación
 const routes: Routes = [
@@ -31,8 +34,18 @@ const routes: Routes = [
   },
   {
     path: 'categoria',
-    component:CrearComponent
-  }
+    component: CrearComponent,
+  },
+  {
+    path: 'listarSede',
+    component: ListarSedeComponent,
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'listarSede/crearSede',
+    component: CrearSedeComponent,
+    // canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({

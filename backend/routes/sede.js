@@ -9,7 +9,10 @@ const auth = require("../middleware/auth");
 router.get("/lista", auth, async (req, res) => {
   const usuario = await Usuario.findById(req.usuario._id);
   if (!usuario) return res.status(401).send("usuario no existe en DB");
-  const sede = await Sede.find({ idEmpresa: req.usuario.idEmpresa, habilitado: true });
+  const sede = await Sede.find({
+    idEmpresa: req.usuario.idEmpresa,
+    habilitado: true,
+  });
   res.send(sede);
 });
 // actualizar sede
@@ -19,6 +22,7 @@ router.put("/", auth, async (req, res) => {
   const sede = await Sede.findByIdAndUpdate(
     req.body._id,
     {
+      idEmpresa: usuario.idEmpresa,
       idUsuario: usuario._id,
       nombre: req.body.nombre,
       descripcion: req.body.descripcion,
@@ -63,6 +67,7 @@ router.post("/", auth, async (req, res) => {
   if (sede) return res.status(400).send("La sede ya se encuentra registrada");
   // si sede no existe
   sede = new Sede({
+    idEmpresa: usuario.idEmpresa,
     idUsuario: usuario._id,
     nombre: req.body.nombre,
     descripcion: req.body.descripcion,
