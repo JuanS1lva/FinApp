@@ -34,7 +34,7 @@ const routes: Routes = [
     component: PerfilesComponent,
   },
   {
-    path: 'categoria',
+    path: 'listarCategorias/categoria',
     component: CrearComponent,
   },
   {

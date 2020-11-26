@@ -1,0 +1,7 @@
+.borde-seccion{
+    border-top: 1px solid;
+    border-width: 3px;
+    border-color: #000;
+    border-radius: 5px;
+    margin: 0px auto;   /*Centra el elemento en el contenedor html*/
+  }

@@ -2,8 +2,8 @@
   <div class=" navbar-collapse" id="navbarNavAltMarkup">
     <div class="container navbar-nav">
       <a class="nav-link active mb-2" routerLink="home">Nuestra App</a>
-      <a class="nav-link mb-2" routerLink="listarSede">Sedes</a>
-      <a class="nav-link mb-2" href="#">Documentación</a>
+      <a *ngIf="auth.loginOn()" class="nav-link mb-2" routerLink="listarSede">Sedes</a>
+      <a *ngIf="auth.loginOn()" class="nav-link mb-2" routerLink="listarCategorias">Categorias</a>
       <a class="nav-link mb-2" href="#">Planes</a>
       <a class="nav-link mb-2" routerLink="perfiles">Equipo</a>
     </div>
