@@ -9,8 +9,18 @@ export class AuthService {
   private registroUrl = `${environment.apiUrl}/usuario`;
   private loginUrl = `${environment.apiUrl}/auth`;
   private categoriaUrl = `${environment.apiUrl}/categorias`;
+  private empUsuarioUrl = `${environment.apiUrl}/empusuario/lista`;
+  private usuarioUrl = `${environment.apiUrl}/empusuario/listacontrol`;
 
   constructor(private http: HttpClient) {}
+
+  listarUsuarioEmp(){
+    return this.http.get<any>(this.empUsuarioUrl);
+  }
+
+  listarUsuario(){
+    return this.http.get<any>(this.usuarioUrl);
+  }
 
   registroUsuario(usuario) {
     //retorna un objeto denominado observable

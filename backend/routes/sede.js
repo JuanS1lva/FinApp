@@ -5,16 +5,42 @@ const router = express.Router();
 const Sede = require("../model/sede");
 const { Usuario } = require("../model/usuario");
 const auth = require("../middleware/auth");
+
 // listar sede
 router.get("/lista", auth, async (req, res) => {
   const usuario = await Usuario.findById(req.usuario._id);
   if (!usuario) return res.status(401).send("usuario no existe en DB");
+
+  // obtener todos los usuarios asociados a una empresa
+  const lstUsuario = await Usuario.find({
+    idEmpresa: req.usuario.idEmpresa,
+  });
+
   const sede = await Sede.find({
     idEmpresa: req.usuario.idEmpresa,
     habilitado: true,
   });
-  res.send(sede);
+
+  let listaSede = [];
+  sede.forEach((item) => {
+    let usuResponsable = "";
+    lstUsuario.forEach((usu) => {
+      usuResponsable = usu._id == item.idUsuarioResponsable ? usu.nombreApellido : usuResponsable;
+    });
+
+    const sede = {
+      _id: item._id,
+      nombre: item.nombre,
+      usuResponsable: usuResponsable,
+      descripcion: item.descripcion,
+      habilitado: item.habilitado ? "SI" : "NO",
+    };
+    listaSede.push(sede);
+  });
+
+  res.send(listaSede);
 });
+
 // actualizar sede
 router.put("/", auth, async (req, res) => {
   const usuario = await Usuario.findById(req.usuario._id);
