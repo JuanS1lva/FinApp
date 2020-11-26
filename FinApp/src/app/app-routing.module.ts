@@ -9,6 +9,8 @@ import { ListarSedeComponent } from './sede/listar-sede/listar-sede.component';
 import { CrearSedeComponent } from './sede/crear-sede/crear-sede.component';
 import { AuthGuard } from './guard/auth.guard';
 import { ListaComponent } from './categoria/lista/lista.component';
+import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
+import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
 
 // Navegación de la aplicación
 const routes: Routes = [
@@ -49,6 +51,16 @@ const routes: Routes = [
   {
     path: 'listarSede/crearSede',
     component: CrearSedeComponent,
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'listarUsuario',
+    component: ListarUsuarioComponent,
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'listarUsuario/crearUsuario',
+    component: CrearUsuarioComponent,
     // canActivate: [AuthGuard],
   },
 ];

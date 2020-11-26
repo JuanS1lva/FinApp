@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   private registroUrl = `${environment.apiUrl}/usuario`;
   private loginUrl = `${environment.apiUrl}/auth`;
+  private registroUsuarioUrl = `${environment.apiUrl}/empusuario`;
   private empUsuarioUrl = `${environment.apiUrl}/empusuario/lista`;
   private usuarioUrl = `${environment.apiUrl}/empusuario/listacontrol`;
 
@@ -25,6 +26,11 @@ export class AuthService {
   registroUsuario(usuario) {
     //retorna un objeto denominado observable
     return this.http.post<any>(this.registroUrl, usuario);
+  }
+
+  crearUsuarioSistema(usuario) {
+    //retorna un objeto denominado observable
+    return this.http.post<any>(this.registroUsuarioUrl, usuario);
   }
 
   loginUsuario(usuario) {

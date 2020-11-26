@@ -24,7 +24,9 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
 import { ListarSedeComponent } from './sede/listar-sede/listar-sede.component';
 import { CrearSedeComponent } from './sede/crear-sede/crear-sede.component';
 import { SedeService } from './service/sede.service';
-import { CategoriaService } from './service/categoria.service'
+import { CategoriaService } from './service/categoria.service';
+import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
+import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component'
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { CategoriaService } from './service/categoria.service'
     ListaComponent,
     ListarSedeComponent,
     CrearSedeComponent,
+    CrearUsuarioComponent,
+    ListarUsuarioComponent,
   ],
   imports: [
     BrowserModule,
