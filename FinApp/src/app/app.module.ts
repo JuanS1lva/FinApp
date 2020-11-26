@@ -24,6 +24,7 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
 import { ListarSedeComponent } from './sede/listar-sede/listar-sede.component';
 import { CrearSedeComponent } from './sede/crear-sede/crear-sede.component';
 import { SedeService } from './service/sede.service';
+import { CategoriaService } from './service/categoria.service'
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { SedeService } from './service/sede.service';
   providers: [
     AuthService,
     SedeService,
+    CategoriaService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,

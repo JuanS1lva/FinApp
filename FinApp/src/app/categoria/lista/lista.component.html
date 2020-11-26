@@ -1,1 +1,39 @@
-<p>lista works!</p>
+<main>
+  <div class="container border">
+    <div
+      class="d-sm-flex flex-sm-column d-md-flex flex-md-row justify-content-md-between my-5"
+    >
+      <h3 class="text-center">Lista Categorias</h3>
+      <div class="boton bg-navegacion">
+        <a routerLink="crearSede">
+          <i class="fas fa-plus-circle px-2"></i>Registrar Sede
+        </a>
+      </div>
+    </div>
+    <div class="table-responsive-sm table-responsive-md table-responsive-lg">
+      <table class="table table-admin mb-5">
+        <thead class="tabla-encabezado">
+          <tr>
+            <th scope="col">Categoria</th>
+            <th scope="col">Sub-Categoria 1</th>
+            <th scope="col">Sub-Categoria 2</th>
+            <th scope="col">Sub-Categoria 3</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="lista.length">
+          <tr *ngFor="let item of lista">
+            <th scope="row">{{ item.nombreCategoria }}</th>
+            <td *ngFor="let subCat of item.subCategorias" >{{ subCat }}</td>
+            <td><button type="button" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button></td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="!lista.length">
+          <tr>
+            <td colspan="4">No hay registros para mostrar</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

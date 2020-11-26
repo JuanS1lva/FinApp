@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; // va igual si se configura https
 import { environment } from '../../environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -8,11 +9,10 @@ import { environment } from '../../environments/environment';
 export class AuthService {
   private registroUrl = `${environment.apiUrl}/usuario`;
   private loginUrl = `${environment.apiUrl}/auth`;
-  private categoriaUrl = `${environment.apiUrl}/categorias`;
   private empUsuarioUrl = `${environment.apiUrl}/empusuario/lista`;
   private usuarioUrl = `${environment.apiUrl}/empusuario/listacontrol`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   listarUsuarioEmp(){
     return this.http.get<any>(this.empUsuarioUrl);
@@ -31,10 +31,6 @@ export class AuthService {
     return this.http.post<any>(this.loginUrl, usuario);
   }
 
-  registrarCategoria(categoria) {
-    return this.http.post<any>(this.categoriaUrl, categoria);
-  }
-
   loginOn(){
     return !!localStorage.getItem('token')
   }
@@ -42,4 +38,10 @@ export class AuthService {
   obtenerToken(){
     return localStorage.getItem('token')
   }
+
+  cerrarSesion(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login'])
+  }
+
 }

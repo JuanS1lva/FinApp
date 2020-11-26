@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
+import { CategoriaService } from '../../service/categoria.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CrearComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router, private categoria: CategoriaService) { }
 
   nuevaCategoria = {
     nombreCategoria:'',
@@ -21,7 +22,7 @@ export class CrearComponent implements OnInit {
   }
   
   registrar(){
-    this.auth.registrarCategoria(this.nuevaCategoria).subscribe(
+    this.categoria.crearCategoria(this.nuevaCategoria).subscribe(
       (res) => {
         console.log(res);
       },
@@ -29,6 +30,8 @@ export class CrearComponent implements OnInit {
         console.log(err)
       }
     )
+    
   }
+
 
 }
