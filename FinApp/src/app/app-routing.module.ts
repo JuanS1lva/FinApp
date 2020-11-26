@@ -8,6 +8,7 @@ import { CrearComponent } from './categoria/crear/crear.component';
 import { ListarSedeComponent } from './sede/listar-sede/listar-sede.component';
 import { CrearSedeComponent } from './sede/crear-sede/crear-sede.component';
 import { AuthGuard } from './guard/auth.guard';
+import { ListaComponent } from './categoria/lista/lista.component';
 
 // Navegación de la aplicación
 const routes: Routes = [
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'categoria',
     component: CrearComponent,
+  },
+  {
+    path: 'listarCategorias',
+    component: ListaComponent,
   },
   {
     path: 'listarSede',
