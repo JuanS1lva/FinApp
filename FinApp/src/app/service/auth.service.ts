@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; // va igual si se configura https
 import { environment } from '../../environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ export class AuthService {
   private registroUrl = `${environment.apiUrl}/usuario`;
   private loginUrl = `${environment.apiUrl}/auth`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   registroUsuario(usuario) {
     //retorna un objeto denominado observable
@@ -27,4 +28,10 @@ export class AuthService {
   obtenerToken(){
     return localStorage.getItem('token')
   }
+
+  cerrarSesion(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login'])
+  }
+
 }

@@ -12,10 +12,13 @@
       </ul>
       <ul class="navbar-nav link-hover">
         <li class="nav-item mr-3">
-          <a class="nav-link " routerLink="registro">Registrate</a>
+          <a *ngIf="!auth.loginOn()" class="nav-link " routerLink="registro">Registrate</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " routerLink="login">Iniciar Sesión</a>
+          <a *ngIf="!auth.loginOn()" class="nav-link " routerLink="login">Iniciar Sesión</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="auth.loginOn()" class="nav-link " routerLink="login" (click)="auth.cerrarSesion()">Cerrar Sesion</a>
         </li>
       </ul>
     </div>
