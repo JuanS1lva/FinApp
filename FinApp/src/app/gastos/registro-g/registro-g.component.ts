@@ -8,69 +8,55 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-registro-g',
   templateUrl: './registro-g.component.html',
-  styleUrls: ['./registro-g.component.css']
+  styleUrls: ['./registro-g.component.css'],
 })
 export class RegistroGComponent implements OnInit {
-
-  constructor(private auth: AuthService, private router: Router, private gasto: GastoService, private categoria: CategoriaService, private sede: SedeService) {
-
-   }
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private gasto: GastoService,
+    private categoria: CategoriaService,
+    private sede: SedeService
+  ) {}
 
   nuevoGasto = {
     categoria: '',
-    subCategorias:'',
+    subCategorias: '',
     descripcion: '',
-    monto:'',
-    sede:'',
-    proveedor:'',
-    usuarioResponsable:''
+    monto: '',
+    sede: '',
+    proveedor: '',
+    usuarioResponsable: '',
   };
 
-  categorias=[]
-  sedes=[]
-  subCategorias=''
-  responsables=[]
-  activeCat={subCategorias:[],nombreCategoria:''}
+  categorias = [];
+  sedes = [];
+  subCategorias = '';
+  responsables = [];
+  activeCat = { subCategorias: [], nombreCategoria: '' };
 
   ngOnInit(): void {
     this.categoria.listarCategoria().subscribe(
-      (res)=>{
-        this.categorias=res;
+      (res) => {
+        this.categorias = res;
       },
-      (err)=>{
-        console.log(err)
+      (err) => {
+        console.log(err);
       }
-    )
+    );
 
     this.sede.listarSede().subscribe(
-      (res)=>{
-        this.sedes=res;
+      (res) => {
+        this.sedes = res;
       },
-      (err)=>{
-        console.log(err)
+      (err) => {
+        console.log(err);
       }
-    )
+    );
 
     this.auth.listarUsuarioEmp().subscribe(
-      (res)=>{
-        this.responsables=res.listaUsuarios;
-      },
-      (err)=>{
-        console.log(err)
-      }
-    )
-
-  }
-
-  registrar() {
-    this.nuevoGasto = {
-      ...this.nuevoGasto,
-      categoria: this.activeCat.nombreCategoria
-    }
-    this.gasto.crearGasto(this.nuevoGasto).subscribe(
       (res) => {
-        console.log(res);
-        //this.router.navigate(['/listarCategorias']); // ir al listar de gasto
+        this.responsables = res.listaUsuarios;
       },
       (err) => {
         console.log(err);
@@ -78,4 +64,19 @@ export class RegistroGComponent implements OnInit {
     );
   }
 
+  registrar() {
+    this.nuevoGasto = {
+      ...this.nuevoGasto,
+      categoria: this.activeCat.nombreCategoria,
+    };
+    this.gasto.crearGasto(this.nuevoGasto).subscribe(
+      (res) => {
+        console.log(res);
+        this.router.navigate(['/listarGasto']); // ir al listar de gasto
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 }
