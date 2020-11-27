@@ -83,7 +83,7 @@ router.post("/", auth, async (req, res) => {
     tipoDocumento: req.body.tipoDocumento,
     numeroDocumento: req.body.numeroDocumento,
     cargo: req.body.cargo,
-    rol: [req.body.rol],
+    rol: req.body.rol,
     habilitado: true,
     correo: req.body.correo,
     pass: req.body.pass,
