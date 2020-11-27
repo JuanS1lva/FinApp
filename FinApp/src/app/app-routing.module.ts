@@ -11,6 +11,8 @@ import { AuthGuard } from './guard/auth.guard';
 import { ListaComponent } from './categoria/lista/lista.component';
 import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
 import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
+import { RegistroGComponent } from './gastos/registro-g/registro-g.component';
+import { ListaGastosComponent } from './gastos/lista-gastos/lista-gastos.component';
 
 // Navegación de la aplicación
 const routes: Routes = [
@@ -61,6 +63,16 @@ const routes: Routes = [
   {
     path: 'listarUsuario/crearUsuario',
     component: CrearUsuarioComponent,
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'gasto',
+    component: RegistroGComponent,
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'listarGasto',
+    component: ListaGastosComponent,
     // canActivate: [AuthGuard],
   },
 ];

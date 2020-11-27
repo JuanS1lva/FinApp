@@ -20,34 +20,34 @@ router.get("/listaemp", auth, async (req, res) => {
   res.send(gasto);
 });
 // actualizar gasto
-router.put("/", auth, async (req, res) => {
-  const usuario = await Usuario.findById(req.usuario._id);
-  if (!usuario) return res.status(401).send("el usuario no existe");
-  const gasto = await Gasto.findByIdAndUpdate(
-    req.body._id,
-    {
-      idUsuario: usuario._id,
-      idEmpresa: usuario.idEmpresa,
-      numeroReferencia: req.body.numeroReferencia,
-      fecha: req.body.fecha,
-      idSede: req.body.idSede,
-      idUsuarioResponsable: req.body.idUsuarioResponsable,
-      proveedor: req.body.proveedor,
-      montoGasto: req.body.montoGasto,
-      descripcion: req.body.descripcion,
-      idcategoria: req.body.idcategoria,
-    },
-    {
-      new: true,
-    }
-  );
-  if (!gasto) {
-    return res
-      .status(401)
-      .send("no fue posible actualizar el registro de gasto");
-  }
-  res.status(200).send(gasto);
-});
+// router.put("/", auth, async (req, res) => {
+//   const usuario = await Usuario.findById(req.usuario._id);
+//   if (!usuario) return res.status(401).send("el usuario no existe");
+//   const gasto = await Gasto.findByIdAndUpdate(
+//     req.body._id,
+//     {
+//       idUsuario: usuario._id,
+//       idEmpresa: usuario.idEmpresa,
+//       numeroReferencia: req.body.numeroReferencia,
+//       fecha: req.body.fecha,
+//       idSede: req.body.idSede,
+//       idUsuarioResponsable: req.body.idUsuarioResponsable,
+//       proveedor: req.body.proveedor,
+//       montoGasto: req.body.montoGasto,
+//       descripcion: req.body.descripcion,
+//       idcategoria: req.body.idcategoria,
+//     },
+//     {
+//       new: true,
+//     }
+//   );
+//   if (!gasto) {
+//     return res
+//       .status(401)
+//       .send("no fue posible actualizar el registro de gasto");
+//   }
+//   res.status(200).send(gasto);
+// });
 // eliminar gasto
 router.delete("/:_id", auth, async (req, res) => {
   // Buscamos el usuario
@@ -70,30 +70,22 @@ router.post("/", auth, async (req, res) => {
   // si existe el usuario procedemos a crear el gasto
 
   // Validar si existe un registro de gasto con la misma referencia en BD
-  let gasto = await Gasto.findOne({
+  let gasto = await Gasto.find({
     idUsuario: usuario._id,
-    numeroReferencia: req.body.numeroReferencia,
   });
-  // si el gasto existe asociado al usuario en bd
-  if (gasto)
-    return res
-      .status(400)
-      .send(
-        "Ya existe un gasto creado con el número de referencia: " +
-          req.body.numeroReferencia
-      );
+  const longitud = gasto.length ? gasto.length + 1 : 1
   // si gasto no existe
   gasto = new Gasto({
     idUsuario: usuario._id,
     idEmpresa: usuario.idEmpresa,
-    numeroReferencia: req.body.numeroReferencia,
-    fecha: req.body.fecha,
-    idSede: req.body.idSede,
-    idUsuarioResponsable: req.body.idUsuarioResponsable,
+    numeroReferencia: longitud.toString(),
+    sede: req.body.sede,
+    usuarioResponsable: req.body.idUsuarioResponsable,
     proveedor: req.body.proveedor,
-    montoGasto: req.body.montoGasto,
+    monto: req.body.monto,
     descripcion: req.body.descripcion,
-    idcategoria: req.body.idcategoria,
+    categoria: req.body.categoria,
+    subCategorias: req.body.subCategorias,
   });
   const result = await gasto.save();
   res.status(200).send(result);

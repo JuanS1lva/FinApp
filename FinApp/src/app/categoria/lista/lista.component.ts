@@ -40,7 +40,6 @@ export class ListaComponent implements OnInit {
   }
 
   eliminar(listaElegida){
-    console.log(listaElegida)
     this.categoria.eliminarCategoria(listaElegida).subscribe(
       (res)=>{
         const index = this.lista.indexOf(listaElegida);

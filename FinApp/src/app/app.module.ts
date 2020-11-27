@@ -26,7 +26,9 @@ import { CrearSedeComponent } from './sede/crear-sede/crear-sede.component';
 import { SedeService } from './service/sede.service';
 import { CategoriaService } from './service/categoria.service';
 import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
-import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component'
+import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
+import { RegistroGComponent } from './gastos/registro-g/registro-g.component';
+import { ListaGastosComponent } from './gastos/lista-gastos/lista-gastos.component'
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.
     CrearSedeComponent,
     CrearUsuarioComponent,
     ListarUsuarioComponent,
+    RegistroGComponent,
+    ListaGastosComponent,
   ],
   imports: [
     BrowserModule,
